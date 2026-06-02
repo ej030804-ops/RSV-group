@@ -1,0 +1,151 @@
+
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Users, Building2, Award, Gem, Target, Eye, ShieldCheck, HeartPulse } from 'lucide-react';
+
+const AboutPage = ({ onNavigate }) => {
+  const stats = [
+    { num: "15+", label: "Years Experience" },
+    { num: "50+", label: "Projects Completed" },
+    { num: "1500+", label: "Happy Customers" },
+    { num: "10+", label: "Acres Developed" }
+  ];
+
+  return (
+    <div className="about-page-detailed">
+      {/* Hero Section */}
+      <section className="about-hero" style={{ 
+        height: '60vh', 
+        position: 'relative', 
+        display: 'flex', 
+        alignItems: 'center',
+        overflow: 'hidden'
+      }}>
+        <motion.div 
+          initial={{ scale: 1.15 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000) center/cover no-repeat',
+            zIndex: 0
+          }}
+        />
+        <div className="hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(rgba(15,26,17,0.7), rgba(15,26,17,0.9))', zIndex: 1 }} />
+        <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="serif" style={{ fontSize: 'var(--font-hero)', color: 'white', marginBottom: '1rem' }}>Driven by <span className="highlight">Trust.</span></h1>
+            <h2 className="serif" style={{ fontSize: 'var(--font-lg)', color: 'rgba(255,255,255,0.8)' }}>Built on Transparency.</h2>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Company Overview */}
+      <section style={{ padding: '4rem 0' }}>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div>
+            <span className="badge-premium">Our Legacy</span>
+            <h2 className="serif" style={{ fontSize: 'var(--font-xl)', margin: '1rem 0 1.5rem 0' }}>Redefining <span className="highlight">Real Estate</span> in Chennai</h2>
+            <p style={{ color: 'var(--text-light)', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+              For over a decade, RSV Groups has been at the forefront of the plotted development industry in Chennai. We believe that land is the most honest form of investment, and our mission is to make land ownership a seamless, secure, and rewarding experience for everyone.
+            </p>
+            <p style={{ color: 'var(--text-light)', fontSize: '1rem', lineHeight: 1.6 }}>
+              Our projects are selected after rigorous legal and geographical audits, ensuring that every square foot you buy from us holds maximum appreciation potential.
+            </p>
+          </div>
+          <div style={{ position: 'relative' }}>
+             <img 
+               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" 
+               alt="Modern Office" 
+               style={{ width: '100%', borderRadius: '40px 0 40px 0', border: '1px solid #eee' }}
+             />
+             <div style={{ position: 'absolute', bottom: '-30px', right: '-30px', background: 'var(--accent-gold)', padding: '1.5rem', borderRadius: '20px', color: 'var(--primary-dark)', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                <h3 className="serif" style={{ fontSize: 'var(--font-lg)' }}>10+</h3>
+                <p style={{ fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase' }}>Years of Excellence</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section - No top/bottom spaces */}
+      <section style={{ padding: '3rem 0', background: 'var(--primary-dark)', color: 'white' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+            {stats.map((stat, i) => (
+              <div key={i}>
+                <h3 className="serif" style={{ fontSize: 'var(--font-xl)', color: 'var(--accent-gold)', marginBottom: '0.5rem' }}>{stat.num}</h3>
+                <p style={{ fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.6, fontSize: '0.75rem' }}>{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section style={{ padding: '4rem 0', background: '#fcfcfc' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <motion.div 
+               whileHover={{ y: -5 }}
+               style={{ padding: '3rem', background: 'white', borderRadius: '30px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)', border: '1px solid #eee' }}
+            >
+               <Target size={40} color="var(--accent-gold)" style={{ marginBottom: '1.5rem' }} />
+               <h3 className="serif" style={{ fontSize: 'var(--font-lg)', marginBottom: '1rem' }}>Our <span className="highlight">Vision</span></h3>
+               <p style={{ color: 'var(--text-light)', fontSize: '1rem', lineHeight: 1.6 }}>
+                 To be the most trusted and transparent real estate partner in India, empowering people to secure their future through high-value land investments.
+               </p>
+            </motion.div>
+            <motion.div 
+               whileHover={{ y: -5 }}
+               style={{ padding: '3rem', background: 'white', borderRadius: '30px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)', border: '1px solid #eee' }}
+            >
+               <Eye size={40} color="var(--accent-gold)" style={{ marginBottom: '1.5rem' }} />
+               <h3 className="serif" style={{ fontSize: 'var(--font-lg)', marginBottom: '1rem' }}>Our <span className="highlight">Mission</span></h3>
+               <p style={{ color: 'var(--text-label)', fontSize: '1rem', lineHeight: 1.6 }}>
+                 To simplify the land-buying process by providing 100% verified properties, ensuring prime location selection, and delivering world-class infrastructure.
+               </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - Reduced gaps */}
+      <section style={{ padding: '4rem 0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="serif" style={{ fontSize: 'var(--font-xl)' }}>The <span className="highlight">RSV Groups</span> Standard</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '3rem' }}>
+            {[
+              { icon: <ShieldCheck size={28} />, title: "Verified Properties", desc: "Every project goes through a 50-point legal audit before it's offered to you." },
+              { icon: <Award size={28} />, title: "Clear Documentation", desc: "No hidden clauses or surprises. We provide full legal clarity from Day 1." },
+              { icon: <HeartPulse size={28} />, title: "Customer-First", desc: "Our relationship doesn't end at registration. We offer lifelong support." }
+            ].map((item, i) => (
+              <div key={i} style={{ textAlign: 'center' }}>
+                <div style={{ color: 'var(--accent-gold)', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>{item.icon}</div>
+                <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>{item.title}</h4>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA - Reduced padding */}
+      <section style={{ padding: '3rem 0', background: 'var(--accent-gold)', textAlign: 'center' }}>
+        <div className="container">
+          <h2 className="serif" style={{ fontSize: 'var(--font-md)', color: 'var(--primary-dark)', marginBottom: '1.5rem' }}>Want to know more about our journey?</h2>
+          <button onClick={() => onNavigate && onNavigate('contact')} className="book-btn" style={{ background: 'var(--primary-dark)', color: 'white', cursor: 'pointer' }}>Contact Our Team</button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default AboutPage;
