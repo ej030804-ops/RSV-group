@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../images/LOGO.png';
+import logoImg from '../images/logo2.png';
 
 const Navbar = ({ onNavigate, currentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,10 +55,10 @@ const Navbar = ({ onNavigate, currentPage }) => {
     <nav className={`navbar ${isScrolled || isLightPage ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
       <div className="container nav-content">
         <div className="logo-section" onClick={() => handleNavClick('home')} style={{ cursor: 'pointer' }}>
-          <img src={logoImg} alt="RSV GROUPS logo" className="navbar-logo" />
+          <img src={logoImg} alt="RSV ESTATES logo" className="navbar-logo" />
           <div className="brand-text">
             <span className="brand-main">RSV</span>
-            <span className="brand-sub">GROUPS</span>
+            <span className="brand-sub">ESTATES</span>
           </div>
         </div>
 

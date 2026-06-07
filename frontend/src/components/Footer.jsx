@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
-import logo from '../images/LOGO.png';
+import logo from '../images/logo2.png';
 
 const Footer = ({ onNavigate }) => {
   return (
